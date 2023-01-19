@@ -1,0 +1,41 @@
+
+
+.myLoginPage {
+  width: 100%;
+  height: 100vh;
+  background-color: #dedede;
+  position: relative;
+
+  .loginItem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    background-color: white;
+    .loginTitle{
+      font-size: 26px;
+      font-weight: 700;
+      text-align: center;
+      padding: 30px 0 30px 0;
+    }
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 1170px) {
+  .navbar-list {
+    max-width: 90vw;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

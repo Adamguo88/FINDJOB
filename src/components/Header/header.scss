@@ -1,0 +1,64 @@
+.navbar-header {
+  width: 100%;
+  max-height: 95px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  .navbar-list {
+    max-width: 1400px;
+    padding-left: 52px;
+    padding-right: 52px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s all linear;
+
+    .navbar-logo {
+      .logo-text {
+        font-size: 28px;
+        font-weight: 700;
+        display: block;
+        color: #333;
+        transition: 0.3s all linear;
+      }
+    }
+
+    .navbar-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .list-a {
+        padding: 1rem 15px;
+        display: block;
+        color: #333;
+        transition: 0.3s all linear;
+      }
+
+      .list-loginUser {
+        color: red;
+      }
+    }
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 1170px) {
+  .navbar-list {
+    max-width: 90vw;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

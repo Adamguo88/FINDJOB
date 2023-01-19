@@ -1,0 +1,63 @@
+.site-card-wrapper {
+  width: 100%;
+  text-align: center;
+
+  .cart-border-bottom {
+    border-bottom: 1px solid rgb(220, 220, 220);
+  }
+
+  .card-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .card-updateTime {
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .location_seniority {
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+
+      .location_ {
+        padding: 0 10px;
+      }
+
+      .seniority_ {
+        padding: 0 10px;
+      }
+    }
+
+    .companyName {
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .repayment {
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .outline_info {
+      width: 100%;
+
+      .card_information {
+        text-align: left;
+        white-space: pre-line;
+        overflow: hidden;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 6;
+        /*行數*/
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "JavaScript工程師",
+    "city": "高雄市",
+    "payRnge": "月薪35,000以上",
+    "fullJob": "全職",
+    "workFromHome": "接受",
+    "workTime": "平日，周休二日",
+    "relaxTime": "公司安排",
+    "toWorkTime": "依照公司規定",
+    "information": "【使用技能】\n1. JavaScript / Vue / React / ES6 \n2、Css \n 3、Git ",
+    "id": "1",
+    "phoneNumber": "0912345678",
+    "emailAddress": "test@gmail.com",
+    "updateTime": "2023/01/01"
+  },
+  {
+    "title": "軟體工程師",
+    "city": "台北市",
+    "payRnge": "年薪800,000~1,500,000",
+    "fullJob": "全職",
+    "workFromHome": "接受",
+    "workTime": "平日，周休二日",
+    "relaxTime": "公司安排",
+    "toWorkTime": "依照公司規定",
+    "information": "【工作項目】\n1.負責軟體之分析、設計以及程式撰寫。\n2.規劃執行軟體架構及模組之設計，並控管軟體設計進度。\n3.進行軟體之測試與修改。\n4.規劃、執行與維護量產的產品。\n ",
+    "id": "2",
+    "phoneNumber": "0912345678",
+    "emailAddress": "test@gmail.com",
+    "updateTime": "2023/01/01"
+  }
+]
