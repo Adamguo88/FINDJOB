@@ -7,10 +7,10 @@ export default function CompanyComponents() {
 
   return (
     <div className="site-card-wrapper">
-      <Row gutter={[16, 16]}>
+      <Row gutter={[16, 16]} justify='center'>
         {api.map((item) => {
           return (
-            <Col xxl={8} xl={12} lg={12} md={24} sm={24} key={item.id}>
+            <Col xxl={8} xl={12} lg={12} md={12} sm={18} xs={18} key={item.id}>
               <Card title={item.title} hoverable="true">
                 <div className="card-content">
                   <div className="card-updateTime cart-border-bottom">
