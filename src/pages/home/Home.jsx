@@ -6,7 +6,17 @@ import "./home.scss";
 export default function Home() {
   return (
     <div className="main-top container">
-      <Row gutter={[16, 16]} justify="center">
+      <Row
+        gutter={[16, 16]}
+        justify={{
+          xxl: "start",
+          xl: "start",
+          lg: "start",
+          md: "start",
+          sm: "center",
+          xs: "center",
+        }}
+      >
         <Col xxl={8} xl={8} lg={8} md={12} sm={18} xs={16}>
           <div className="home-card">
             <Link to="show" className="animateStyle">

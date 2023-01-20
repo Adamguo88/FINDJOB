@@ -3,10 +3,13 @@ import { useSelector } from "react-redux";
 import { Card, Col, Row } from "antd";
 import "./mycard.scss";
 export default function UserComponents() {
-  const {api} = useSelector((state) => state.controlUser.userDatabase);
+  const { api } = useSelector((state) => state.controlUser.userDatabase);
   return (
     <div className="site-card-wrapper">
-      <Row gutter={[16, 16]} justify='center'>
+      <Row
+        gutter={[16, 16]}
+        justify={{ xxl: "start", xs: "center", sm: "center" }}
+      >
         {api.map((item) => {
           return (
             <Col xxl={8} xl={12} lg={12} md={12} sm={18} xs={18} key={item.id}>

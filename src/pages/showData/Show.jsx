@@ -7,17 +7,31 @@ import "./show.scss";
 
 export default function Show() {
   const [isCompany, setIsCompany] = useState(true);
-
+  const scrollToTop = (flag) => {
+    const nowPageYoffSet = window.scrollY;
+    if (nowPageYoffSet > 100) {
+      setIsCompany(flag);
+      window.scroll(0, 0);
+      return;
+    } else {
+      setIsCompany(flag);
+    }
+  };
   return (
     <div className="show-main-top">
       <div className="rightSelect">
         <div className="selectMenu">
-          <Button type="primary" onClick={() => setIsCompany(true)}>
+          <Button
+            type="primary"
+            onClick={() => {
+              scrollToTop(true);
+            }}
+          >
             展示公司刊登資料
           </Button>
         </div>
         <div className="selectMenu">
-          <Button type="primary" onClick={() => setIsCompany(false)}>
+          <Button type="primary" onClick={() => scrollToTop(false)}>
             展示使用者刊登資料
           </Button>
         </div>
