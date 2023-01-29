@@ -18,9 +18,11 @@
     ],
     "title": "硬體研發工程師",
     "seniority": "經歷不限",
-    "update": "2023/01/01",
+    "update": "2023/01/09",
     "phoneNumber": "0912345678",
-    "emailAddress": "test@gmail.com"
+    "emailAddress": "test@gmail.com",
+    "user_ID":"001"
+
   },
   {
     "city": "高雄市",
@@ -41,9 +43,10 @@
     ],
     "title": "軟體工程師",
     "seniority": "經歷不限",
-    "update": "2023/01/01",
+    "update": "2023/01/07",
     "phoneNumber": "0912345678",
-    "emailAddress": "test@gmail.com"
+    "emailAddress": "test@gmail.com",
+    "user_ID":"002"
   },
   {
     "city": "高雄市",
@@ -66,7 +69,8 @@
     "seniority": "經歷不限",
     "update": "2023/01/01",
     "phoneNumber": "0912345678",
-    "emailAddress": "test@gmail.com"
+    "emailAddress": "test@gmail.com",
+    "user_ID":"003"
   },
   {
     "city": "高雄市",
@@ -87,8 +91,9 @@
     ],
     "title": "軟體工程師",
     "seniority": "經歷不限",
-    "update": "2023/01/01",
+    "update": "2022/12/05",
     "phoneNumber": "0912345678",
-    "emailAddress": "test@gmail.com"
+    "emailAddress": "test@gmail.com",
+    "user_ID":"004"
   }
 ]

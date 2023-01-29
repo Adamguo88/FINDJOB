@@ -9,7 +9,7 @@ import { Col, message, Row } from "antd";
 export default function Header() {
   const location = useLocation()
   const [mobileControl, setMobileControl] = useState(false);
-  const { login, name } = useSelector((state) => state.loginVerify.user);
+  const { name } = useSelector((state) => state.loginVerify.nowLoginUser);
   const dispatch = useDispatch();
 
   const [logoutApi, contextLogout] = message.useMessage();
@@ -51,17 +51,17 @@ export default function Header() {
                 求職刊登
               </Link>
             </li>
-            {login ? (
+            {window.sessionStorage.getItem('login_success')  ? (
               <li className="list-li">
                 <Link className="list-a" to="/admin/behind">
                   後台管理
                 </Link>
               </li>
             ) : null}
-            {login ? (
+            {window.sessionStorage.getItem('login_success') ? (
               <>
                 <li className="list-li">
-                  <span className="list-a list-loginUser ">你好，{name}</span>
+                  <span className="list-a list-loginUser ">{name}</span>
                 </li>
                 <li className="list-li">
                   <Link className="list-a" to="/" onClick={handleLogout}>
@@ -102,7 +102,7 @@ export default function Header() {
                 </Link>
               </Col>
               <Col span={8}>
-                {login ? (
+                {window.sessionStorage.getItem('login_success') ? (
                   <Col span={24}>
                     <Link
                       className="mobile-link-style"

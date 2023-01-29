@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { appendCompanyData } from "../../redux/actions/controlCompany";
+import { setAppendCompany } from "../../redux/actions/loginVerify";
 import { useNavigate } from "react-router-dom";
 import { Button, Form, Input, Select,message } from "antd";
 
@@ -83,8 +84,10 @@ export default function CompanyForm() {
       update: getNowTime(),
       phoneNumber: company.phoneNumber,
       emailAddress: company.emailAddress,
+      user_ID:Math.random(Date.now()).toString(2)
     };
     dispatch(appendCompanyData(data));
+    dispatch(setAppendCompany(data.user_ID))
     success()
     setTimeout(() => {
       navigate('/show')

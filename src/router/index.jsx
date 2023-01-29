@@ -123,6 +123,11 @@ const App = () => {
     getUserAPI();
     getCompanyAPI();
   }, [getUserAPI, getCompanyAPI]);
+  useEffect(()=>{
+    window.addEventListener('load',()=>{
+      window.sessionStorage.clear()
+    })
+  })
   return (
     <Router>
       <GetAllRoutes />

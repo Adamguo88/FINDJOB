@@ -1,13 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 const initialState = {
-  user: {
-    name:'測試帳號',
-    username: "test",
-    password: "123456",
-    notMatch: null,
-    login: false,
+  userList_data: [
+    {
+      name: "使用者1",
+      account_number: "test",
+      password: "123456",
+      login: "false",
+      article:{
+        company:['001','003'],
+        user:['001','002']
+      }
+    },
+    {
+      name: "老闆測試",
+      account_number: "boss",
+      password: "boss123",
+      login: "false",
+      article:{
+        company:['002','004'],
+        user:['003']
+      },
+    },
+  ],
+  superUser: {
+    name: "超級管理員",
+    account_number: "admin",
+    password: "admin",
+    login: "false",
   },
+  nowLoginUser: {},
 };
 const store = createSlice({
   name: "loginVerify",
@@ -15,34 +36,46 @@ const store = createSlice({
   reducers: {
     setMatch(state, action) {
       const { usernameVal, passwordVal } = action.payload;
-      if (
-        usernameVal === state.user.username &&
-        passwordVal.toString() === state.user.password
-      ) {
-        state.user = { ...initialState.user, notMatch: true };
+      const result = initialState.userList_data.find((item) => item.account_number === usernameVal);
+      if (result === undefined) {
+        window.sessionStorage.setItem("login_failed", "nothing");
         return;
-      } else {
-        state.user = { ...initialState.user, notMatch: false };
-        return;
+      } else if (result) {
+        
+        if (usernameVal === result.account_number && passwordVal.toString() === result.password) {
+          state.nowLoginUser = result;
+          window.sessionStorage.setItem("login", result.name);
+          return;
+        } else {
+          window.sessionStorage.setItem("login_failed", "failed");
+          return;
+        }
       }
     },
-    setLogin(state, action) {
-      state.user = {
-        ...initialState.user,
-        login: action.payload,
-        notMatch: action.payload,
+    setLogin() {
+      window.sessionStorage.setItem("login_success", "success");
+    },
+    setLogout(state) {
+      window.sessionStorage.clear();
+      state.nowLoginUser = {
+        ...initialState.nowLoginUser,
       };
     },
-    setLogout(state, action) {
-      state.user = {
-        ...initialState.user,
-        login: action.payload,
-        notMatch: null,
-      };
+    setAppendCompany(state,action){
+      state.nowLoginUser = {
+        ...state.nowLoginUser,
+        article:{...state.nowLoginUser.article,company:[action.payload,...state.nowLoginUser.article.company]}
+      }
     },
+    setAppendUser(state,action){
+      state.nowLoginUser = {
+        ...state.nowLoginUser,
+        article:{...state.nowLoginUser.article,user:[action.payload,...state.nowLoginUser.article.user]}
+      }
+    }
   },
 });
 
-export const { setMatch, setLogin, setLogout } = store.actions;
+export const { setMatch, setLogin, setLogout,setAppendCompany,setAppendUser } = store.actions;
 
 export default store.reducer;

@@ -5,7 +5,7 @@ import "./home.scss";
 
 export default function Home() {
   return (
-    <div className="main-top container">
+    <div className="main-top container main-padding">
       <Row
         gutter={[16, 16]}
         justify={{
@@ -17,7 +17,7 @@ export default function Home() {
           xs: "center",
         }}
       >
-        <Col xxl={8} xl={8} lg={8} md={12} sm={18} xs={16}>
+        <Col xxl={8} xl={8} lg={8} md={12} sm={18} xs={22}>
           <div className="home-card">
             <Link to="show" className="animateStyle">
               <div className="select_event">
@@ -26,7 +26,7 @@ export default function Home() {
             </Link>
           </div>
         </Col>
-        <Col xxl={8} xl={8} lg={8} md={12} sm={18} xs={16}>
+        <Col xxl={8} xl={8} lg={8} md={12} sm={18} xs={22}>
           <div className="home-card">
             <Link to="company" className="animateStyle">
               <div className="select_event">
@@ -35,7 +35,7 @@ export default function Home() {
             </Link>
           </div>
         </Col>
-        <Col xxl={8} xl={8} lg={8} md={12} sm={18} xs={16}>
+        <Col xxl={8} xl={8} lg={8} md={12} sm={18} xs={22}>
           <div className="home-card">
             <Link to="user" className="animateStyle">
               <div className="select_event">

@@ -3,13 +3,11 @@ import UserForm from "./UserForm";
 import "./user.scss";
 import NotLoginPage from "../../components/NotLoginPage";
 
-import { useSelector } from "react-redux";
 export default function User() {
-  const { login } = useSelector((state) => state.loginVerify.user);
   
   return (
     <>
-      {login === false ? (
+      {window.sessionStorage.getItem('login_success') ? (
         <NotLoginPage />
       ) : (
         <div className="main-top container">

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.scss";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setLogin, setMatch } from "../../redux/actions/loginVerify";
 
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
@@ -11,13 +11,33 @@ import { Button, Form, Input, message } from "antd";
 export default function Login() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const { notMatch } = useSelector((state) => state.loginVerify.user);
   const [loginApi, contextLogin] = message.useMessage();
+  const [session, setSession] = useState();
+  const [loginFailed, setLoginFailed] = useState();
+
 
   const handleSubmitForm = ({ username, password }) => {
-    dispatch(setMatch({ usernameVal: username, passwordVal: password }));
-  };
+    const userData = { usernameVal: username, passwordVal: password };
+    const nowIsFailed = window.sessionStorage.getItem('login_failed')
 
+    if (!nowIsFailed) {
+      dispatch(setMatch(userData));
+      setSession(window.sessionStorage.getItem("login"));
+      let loginIsFailed = window.sessionStorage.getItem("login_failed")
+      setLoginFailed(loginIsFailed);
+      return
+
+    } else if (nowIsFailed === 'failed' || 'nothing'){
+
+
+      dispatch(setMatch(userData));
+      setSession(window.sessionStorage.getItem("login"));
+      let loginIsFailed = window.sessionStorage.getItem("login_failed")
+      setLoginFailed(loginIsFailed);
+      return
+    } 
+  };
+  
   useEffect(() => {
     const success = () => {
       loginApi.open({
@@ -31,16 +51,16 @@ export default function Login() {
         content: "登入失敗，請重新嘗試",
       });
     };
-    if (notMatch) {
+    if (session) {
       dispatch(setLogin(true));
       success();
       setTimeout(() => {
         navigate("/");
       }, 1500);
-    } else if (notMatch === false) {
+    } else if (loginFailed === 'failed' || loginFailed === 'nothing' ) {
       unSuccess();
     }
-  }, [notMatch, dispatch, navigate,loginApi]);
+  }, [session, loginFailed, dispatch, navigate, loginApi]);
   return (
     <>
       {contextLogin}
@@ -75,7 +95,6 @@ export default function Login() {
             >
               <Input
                 size="large"
-                status={notMatch === false ? "error" : ""}
                 prefix={<UserOutlined className="site-form-item-icon" />}
                 placeholder="請輸入帳號"
               />
@@ -91,7 +110,6 @@ export default function Login() {
             >
               <Input
                 size="large"
-                status={notMatch === false ? "error" : ""}
                 prefix={<LockOutlined className="site-form-item-icon" />}
                 type="password"
                 placeholder="請輸入密碼"

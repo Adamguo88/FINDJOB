@@ -1,5 +1,6 @@
 import React from "react";
 import { appendUserData } from "../../redux/actions/controlUser";
+import { setAppendUser } from "../../redux/actions/loginVerify";
 import { useDispatch } from "react-redux";
 import { Button, Form, Input, Select, message } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -73,8 +74,10 @@ export default function UserForm() {
       phoneNumber: user.phoneNumber,
       emailAddress: user.emailAddress,
       updateTime: getNowTime(),
+      user_ID:Math.random(Date.now()).toString(2)
     };
     dispatch(appendUserData(data));
+    dispatch(setAppendUser(data.user_ID))
     success();
     setTimeout(() => {
       navigate("/show");

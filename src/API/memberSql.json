@@ -1,0 +1,32 @@
+{
+  "member_account_number": {
+    "user_list": [
+      {
+        "name":"使用者1",
+        "account_number": "test",
+        "password": "123456",
+        "login": "false",
+        "article": [
+          "001",
+          "003"
+        ]
+      },
+      {
+        "name":"老闆測試",
+        "account_number": "boss",
+        "password": "boss123",
+        "login": "false",
+        "article": [
+          "002",
+          "004"
+        ]
+      }
+    ]
+  },
+  "super_admin": {
+    "name":"超級管理員",
+    "account_number": "admin",
+    "password": "admin",
+    "login": "false"
+  }
+}
