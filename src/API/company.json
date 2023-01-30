@@ -16,18 +16,19 @@
       "不限",
       "1人"
     ],
-    "title": "硬體研發工程師",
+    "title": "應徵【硬體研發工程師】職缺",
     "seniority": "經歷不限",
     "update": "2023/01/09",
     "phoneNumber": "0912345678",
     "emailAddress": "test@gmail.com",
-    "user_ID":"001"
+    "user_ID":"001",
+    "key":"1"
 
   },
   {
-    "city": "高雄市",
-    "companyname": "Java工作室",
-    "pay": "月薪35,000~70,000",
+    "city": "台中市",
+    "companyname": "19直播股份有限公司",
+    "pay": "月薪55,000~100,000",
     "information": "【工作範圍】\n1、對網頁視覺及介面設計有高度熱忱。\n2、主要工作為視覺規劃、執行切版及動態效果並交付給程式部門。\n3、具備HTML5、CSS3、RWD、JS及JQ運用技能。\n4、如具備vue.js、react.js等框架經驗者加分。 ",
     "id": "9",
     "detail": [
@@ -41,12 +42,13 @@
       "不限",
       "1人"
     ],
-    "title": "軟體工程師",
+    "title": "應徵【軟體工程師]職缺",
     "seniority": "經歷不限",
     "update": "2023/01/07",
     "phoneNumber": "0912345678",
     "emailAddress": "test@gmail.com",
-    "user_ID":"002"
+    "user_ID":"002",
+    "key":"9"
   },
   {
     "city": "高雄市",
@@ -65,17 +67,18 @@
       "不限",
       "1人"
     ],
-    "title": "軟體工程師",
+    "title": "應徵【軟體工程師】職缺",
     "seniority": "經歷不限",
     "update": "2023/01/01",
     "phoneNumber": "0912345678",
     "emailAddress": "test@gmail.com",
-    "user_ID":"003"
+    "user_ID":"003",
+    "key":"42"
   },
   {
-    "city": "高雄市",
-    "companyname": "Java工作室",
-    "pay": "月薪35,000~70,000",
+    "city": "台北市",
+    "companyname": "應徵【資深Java工程師】職缺",
+    "pay": "年薪900,000 - 1,500,000",
     "information": "【工作範圍】\n1、對網頁視覺及介面設計有高度熱忱。\n2、主要工作為視覺規劃、執行切版及動態效果並交付給程式部門。\n3、具備HTML5、CSS3、RWD、JS及JQ運用技能。\n4、如具備vue.js、react.js等框架經驗者加分。 ",
     "id": "88",
     "detail": [
@@ -94,6 +97,7 @@
     "update": "2022/12/05",
     "phoneNumber": "0912345678",
     "emailAddress": "test@gmail.com",
-    "user_ID":"004"
+    "user_ID":"004",
+    "key":"88"
   }
 ]

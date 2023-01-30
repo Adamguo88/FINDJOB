@@ -84,7 +84,8 @@ export default function CompanyForm() {
       update: getNowTime(),
       phoneNumber: company.phoneNumber,
       emailAddress: company.emailAddress,
-      user_ID:Math.random(Date.now()).toString(2)
+      user_ID:Math.random(Date.now()).toString(2),
+      key:Math.random(Date.now()).toString(2)
     };
     dispatch(appendCompanyData(data));
     dispatch(setAppendCompany(data.user_ID))
@@ -286,12 +287,7 @@ export default function CompanyForm() {
           <Input.TextArea rows={10} />
         </Form.Item>
 
-        <Form.Item
-          wrapperCol={{
-            ...layout.wrapperCol,
-            offset: 8,
-          }}
-        >
+        <Form.Item wrapperCol={{offset: 8,span:16}}>
           <Button type="primary" htmlType="submit">
             刊登
           </Button>

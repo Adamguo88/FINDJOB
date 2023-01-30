@@ -1,0 +1,52 @@
+.behind-navbar-header {
+  width: 100vw;
+  max-height: 95px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .navbar-list {
+    max-width: 1400px;
+    padding-left: 52px;
+    padding-right: 52px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s all linear;
+
+    .navbar-logo {
+      .logo-text {
+        font-size: 24px;
+        font-weight: 700;
+        color: #333;
+      }
+    }
+
+    .behind-user-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+
+    }
+  }
+}
+
+.behind-left {
+  position: fixed;
+  left: 0;
+  top: 68px;
+  z-index: 10;
+  width: 300px;
+  height: 100%;
+  padding: 50px;
+  background-color: rgb(249, 249, 249);
+  box-shadow: 0 5px 15px rgb(0 0 0 / 30%);
+}

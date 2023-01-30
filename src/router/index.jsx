@@ -31,7 +31,7 @@ import Show from "../pages/showData/Show";
 
 import Login from "../pages/login/Login";
 
-import Behind from "../pages/Behind";
+import Behind from "../pages/behind/Behind";
 import Header from "../components/Header/Header";
 
 import UserAPI from "../API/user.json";
@@ -124,7 +124,7 @@ const App = () => {
     getCompanyAPI();
   }, [getUserAPI, getCompanyAPI]);
   useEffect(()=>{
-    window.addEventListener('load',()=>{
+    window.addEventListener('unload',()=>{
       window.sessionStorage.clear()
     })
   })

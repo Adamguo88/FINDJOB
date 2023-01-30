@@ -72,10 +72,24 @@ const store = createSlice({
         ...state.nowLoginUser,
         article:{...state.nowLoginUser.article,user:[action.payload,...state.nowLoginUser.article.user]}
       }
+    },
+    setDeleteCompanyArticle(state,action){
+      const newArticle = state.nowLoginUser.article.company.filter((item) => item !== action.payload)
+      state.nowLoginUser = {
+        ...state.nowLoginUser,
+        article:{...state.nowLoginUser.article,company:newArticle}
+      }
+    },
+    setDeleteUserArticle(state,action){
+      const newArticle = state.nowLoginUser.article.user.filter((item) => item !== action.payload)
+      state.nowLoginUser = {
+        ...state.nowLoginUser,
+        article:{...state.nowLoginUser.article,user:newArticle}
+      }
     }
   },
 });
 
-export const { setMatch, setLogin, setLogout,setAppendCompany,setAppendUser } = store.actions;
+export const { setMatch, setLogin, setLogout,setAppendCompany,setAppendUser,setDeleteCompanyArticle,setDeleteUserArticle } = store.actions;
 
 export default store.reducer;

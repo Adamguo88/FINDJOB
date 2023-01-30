@@ -7,7 +7,7 @@ export default function User() {
   
   return (
     <>
-      {window.sessionStorage.getItem('login_success') ? (
+      {!window.sessionStorage.getItem('login_success') ? (
         <NotLoginPage />
       ) : (
         <div className="main-top container">

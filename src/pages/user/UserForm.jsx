@@ -74,7 +74,8 @@ export default function UserForm() {
       phoneNumber: user.phoneNumber,
       emailAddress: user.emailAddress,
       updateTime: getNowTime(),
-      user_ID:Math.random(Date.now()).toString(2)
+      user_ID:Math.random(Date.now()).toString(2),
+      key:Math.random(Date.now()).toString(2)
     };
     dispatch(appendUserData(data));
     dispatch(setAppendUser(data.user_ID))

@@ -1,6 +1,6 @@
 [
   {
-    "title": "JavaScript工程師",
+    "title": "尋找【JavaScript工程師】職缺",
     "city": "高雄市",
     "payRnge": "月薪35,000以上",
     "fullJob": "全職",
@@ -13,10 +13,11 @@
     "phoneNumber": "0912345678",
     "emailAddress": "test@gmail.com",
     "updateTime": "2023/01/15",
-    "user_ID":"001"
+    "user_ID":"001",
+    "key":"1"
   },
   {
-    "title": "軟體工程師",
+    "title": "尋找【軟體工程師】職缺",
     "city": "台北市",
     "payRnge": "年薪800,000~1,500,000",
     "fullJob": "全職",
@@ -29,6 +30,23 @@
     "phoneNumber": "0912345678",
     "emailAddress": "test@gmail.com",
     "updateTime": "2023/01/01",
-    "user_ID":"002"
+    "user_ID":"002",
+    "key":"2"
+  },{
+    "title": "尋找【UI/UX設計師】職缺",
+    "city": "台北市",
+    "payRnge": "月薪55,000以上",
+    "fullJob": "全職",
+    "workFromHome": "接受",
+    "workTime": "平日，周休二日",
+    "relaxTime": "公司安排",
+    "toWorkTime": "依照公司規定",
+    "information": "【工作項目】\n1.負責軟體之分析、設計以及程式撰寫。\n2.規劃執行軟體架構及模組之設計，並控管軟體設計進度。\n3.進行軟體之測試與修改。\n4.規劃、執行與維護量產的產品。\n ",
+    "id": "3",
+    "phoneNumber": "0912345678",
+    "emailAddress": "test@gmail.com",
+    "updateTime": "2023/01/30",
+    "user_ID":"003",
+    "key":"3"
   }
 ]

@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { setLogout } from "../../redux/actions/loginVerify";
-import { CgMenuGridR } from "react-icons/cg";
 import "./header.scss";
 import { Col, message, Row } from "antd";
 
 export default function Header() {
-  const location = useLocation()
-  const [mobileControl, setMobileControl] = useState(false);
   const { name } = useSelector((state) => state.loginVerify.nowLoginUser);
   const dispatch = useDispatch();
 
@@ -26,15 +23,12 @@ export default function Header() {
       content: "登出成功，正在跳轉中",
     });
   };
-  useEffect(()=>{
-    setMobileControl(false)
-  },[location])
 
   return (
     <>
       {contextLogout}
       <div className="navbar-header">
-        <div className="navbar-list ">
+        <div className="navbar-list">
           <div className="navbar-logo">
             <Link className="logo-text" to="/">
               <span>求職網</span>
@@ -51,14 +45,14 @@ export default function Header() {
                 求職刊登
               </Link>
             </li>
-            {window.sessionStorage.getItem('login_success')  ? (
+            {window.sessionStorage.getItem("login_success") ? (
               <li className="list-li">
                 <Link className="list-a" to="/admin/behind">
                   後台管理
                 </Link>
               </li>
             ) : null}
-            {window.sessionStorage.getItem('login_success') ? (
+            {window.sessionStorage.getItem("login_success") ? (
               <>
                 <li className="list-li">
                   <span className="list-a list-loginUser ">{name}</span>
@@ -77,7 +71,25 @@ export default function Header() {
               </li>
             )}
           </ul>
-          <div
+          <div className="mobile-login">
+            {window.sessionStorage.getItem("login_success") ? (
+              <div className="logout">
+                {name}
+                <Link
+                  className="mobile-link-style"
+                  to="/"
+                  onClick={handleLogout}
+                >
+                  登出
+                </Link>
+              </div>
+            ) : (
+              <Link className="mobile-link-style" to="login">
+                登入
+              </Link>
+            )}
+          </div>
+          {/* <div
             className="header-mobile-menu-btn"
             onClick={() => setMobileControl(!mobileControl)}
           >
@@ -121,7 +133,28 @@ export default function Header() {
                 )}
               </Col>
             </Row>
-          </div>
+          </div> */}
+        </div>
+        <div className="navbar-list-mobile">
+          <Row gutter={[24, 16]} justify="start " align="middle">
+            <Col span={8}>
+              <Link className="mobile-link-style" to="company">
+                公司刊登
+              </Link>
+            </Col>
+            <Col span={8}>
+              <Link className="mobile-link-style" to="user">
+                求職刊登
+              </Link>
+            </Col>
+            {window.sessionStorage.getItem("login_success") ? (
+              <Col span={8}>
+                <Link className="mobile-link-style" to="/admin/behind">
+                  後台管理
+                </Link>
+              </Col>
+            ) : null}
+          </Row>
         </div>
       </div>
       <Outlet></Outlet>
