@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { setBehindDeleteCompanyData } from "../../redux/actions/controlCompany";
 import { setDeleteCompanyArticle } from "../../redux/actions/loginVerify";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom'
 import { Space, Table, Button } from "antd";
 import "./edit.scss";
 const { Column } = Table;
 export default function CompanyBehind() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [firstData, setFirstData] = useState([]);
   const { company } = useSelector(
     (state) => state.loginVerify.nowLoginUser.article
@@ -18,6 +20,9 @@ export default function CompanyBehind() {
     dispatch(setBehindDeleteCompanyData(id));
     dispatch(setDeleteCompanyArticle(id))
   };
+  const editCompanyData = (id) => {
+    navigate(`/admin/edit/company/${id}`)
+  }
   useEffect(() => {
     const findFirstData = () => {
       let findMatchData = companyData.filter((item) => {
@@ -42,7 +47,7 @@ export default function CompanyBehind() {
           key="action"
           render={(_, record) => (
             <Space size="middle">
-              <Button type="primary">編輯</Button>
+              <Button type="primary" onClick={()=> editCompanyData(record.user_ID)}>編輯</Button>
               <Button
                 type="primary"
                 onClick={() => deleteCompanyData(record.user_ID)}

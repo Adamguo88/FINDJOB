@@ -3,9 +3,11 @@ import { setBehindDeleteUserData } from "../../redux/actions/controlUser";
 import {setDeleteUserArticle} from '../../redux/actions/loginVerify'
 import { Space, Table, Button } from "antd";
 import { useSelector,useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom'
 import "./edit.scss";
 const { Column } = Table;
 export default function UserBehind() {
+  const navigate = useNavigate();
   const dispatch = useDispatch()
   const [firstData, setFirstData] = useState([]);
   const { user } = useSelector(
@@ -26,6 +28,10 @@ export default function UserBehind() {
     };
     findFirstData();
   }, [user, userData]);
+
+  const editCompanyData = (id) => {
+    navigate(`/admin/edit/user/${id}`)
+  }
   return (
     <div className="behind-show-page">
       <div className="company-title">普通用戶管理頁面</div>
@@ -41,7 +47,7 @@ export default function UserBehind() {
           key="action"
           render={(_, record) => (
             <Space size="middle">
-              <Button type="primary">編輯</Button>
+              <Button type="primary" onClick={()=> editCompanyData(record.user_ID)}>編輯</Button>
               <Button
                 type="primary"
                 onClick={() => deleteCompanyData(record.user_ID)}

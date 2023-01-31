@@ -32,6 +32,7 @@ import Show from "../pages/showData/Show";
 import Login from "../pages/login/Login";
 
 import Behind from "../pages/behind/Behind";
+import BehindEditPage from "../pages/behind/edit/BehindEditPage";
 import Header from "../components/Header/Header";
 
 import UserAPI from "../API/user.json";
@@ -71,7 +72,12 @@ const GetUserRoutes = () => {
 
 const GetAdminRoutes = () => {
   const routes = useRoutes([
-    { path: "behind", element: <Behind /> },
+    {
+      path: "behind",
+      element: <Behind />,
+    },
+    { path: "edit/company/:id", element: <BehindEditPage /> },
+    { path: "edit/user/:id", element: <BehindEditPage /> },
     { path: "*", element: <div>找不到後台頁面</div> },
   ]);
   return routes;
@@ -123,11 +129,11 @@ const App = () => {
     getUserAPI();
     getCompanyAPI();
   }, [getUserAPI, getCompanyAPI]);
-  useEffect(()=>{
-    window.addEventListener('unload',()=>{
-      window.sessionStorage.clear()
-    })
-  })
+  useEffect(() => {
+    window.addEventListener("unload", () => {
+      window.sessionStorage.clear();
+    });
+  });
   return (
     <Router>
       <GetAllRoutes />

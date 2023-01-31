@@ -26,10 +26,18 @@ const state = createSlice({
         ...state.companyDatabase,
         api: newAPI
       };
+    },
+    setUpdatingCompanyData(state,action){
+      const newAPI = state.companyDatabase.api.filter((item) => item.user_ID !== action.payload.saveUserID)
+      state.companyDatabase ={
+        ...state.companyDatabase,
+        api:[action.payload.data,...newAPI]
+        
+      }
     }
   },
 });
 
-export const { setCompanyAPI, appendCompanyData,setBehindDeleteCompanyData } =
+export const { setCompanyAPI, appendCompanyData,setBehindDeleteCompanyData,setUpdatingCompanyData } =
   state.actions;
 export default state.reducer;

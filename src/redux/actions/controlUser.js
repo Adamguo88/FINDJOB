@@ -26,9 +26,17 @@ const state = createSlice({
         ...state.userDatabase,
         api: newAPI
       };
+    },
+    setUpdatingUserData(state,action){
+      const newAPI = state.userDatabase.api.filter((item) => item.user_ID !== action.payload.saveUserID)
+      state.userDatabase ={
+        ...state.userDatabase,
+        api:[action.payload.data,...newAPI]
+        
+      }
     }
   },
 });
 
-export const { setUserAPI,appendUserData,setBehindDeleteUserData } = state.actions;
+export const { setUserAPI,appendUserData,setBehindDeleteUserData,setUpdatingUserData } = state.actions;
 export default state.reducer;

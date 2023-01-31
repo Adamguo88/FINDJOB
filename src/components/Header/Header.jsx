@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
-import { setLogout } from "../../redux/actions/loginVerify";
+import { setLogout,setBeforeLogout } from "../../redux/actions/loginVerify";
 import "./header.scss";
 import { Col, message, Row } from "antd";
 
@@ -13,8 +13,9 @@ export default function Header() {
 
   const handleLogout = () => {
     success();
+    dispatch(setBeforeLogout())
     setTimeout(() => {
-      dispatch(setLogout(false));
+      dispatch(setLogout());
     }, 1000);
   };
   const success = () => {

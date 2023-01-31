@@ -36,7 +36,7 @@ const store = createSlice({
   reducers: {
     setMatch(state, action) {
       const { usernameVal, passwordVal } = action.payload;
-      const result = initialState.userList_data.find((item) => item.account_number === usernameVal);
+      const result = state.userList_data.find((item) => item.account_number === usernameVal);
       if (result === undefined) {
         window.sessionStorage.setItem("login_failed", "nothing");
         return;
@@ -55,11 +55,14 @@ const store = createSlice({
     setLogin() {
       window.sessionStorage.setItem("login_success", "success");
     },
+    setBeforeLogout(state){
+      const nowLoginUserSession = window.sessionStorage.getItem('login')
+      const newUserList = state.userList_data.filter((user) => user.name !== nowLoginUserSession)
+      state.userList_data = [...newUserList,{...state.nowLoginUser}]
+    },
     setLogout(state) {
       window.sessionStorage.clear();
-      state.nowLoginUser = {
-        ...initialState.nowLoginUser,
-      };
+      state.nowLoginUser={}
     },
     setAppendCompany(state,action){
       state.nowLoginUser = {
@@ -90,6 +93,6 @@ const store = createSlice({
   },
 });
 
-export const { setMatch, setLogin, setLogout,setAppendCompany,setAppendUser,setDeleteCompanyArticle,setDeleteUserArticle } = store.actions;
+export const { setMatch, setLogin, setLogout,setBeforeLogout,setAppendCompany,setAppendUser,setDeleteCompanyArticle,setDeleteUserArticle } = store.actions;
 
 export default store.reducer;
