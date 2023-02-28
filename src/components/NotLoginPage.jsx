@@ -10,9 +10,13 @@ export default function NotLoginPage() {
   };
   
   useEffect(()=>{
-    setTimeout(() => {
+    const redirect = setTimeout(() => {
       gotoLogin()
     }, 3000);
+
+    return(()=>{
+      clearTimeout(redirect)
+    })
   })
 
   return (

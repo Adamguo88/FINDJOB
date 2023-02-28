@@ -16,7 +16,7 @@ export default function Login() {
   const [loginFailed, setLoginFailed] = useState();
 
 
-  const handleSubmitForm = ({ username, password }) => {
+  const handleSubmitForm = ({ username='test123', password='123456' }) => {
     const userData = { usernameVal: username, passwordVal: password };
     const nowIsFailed = window.sessionStorage.getItem('login_failed')
 
